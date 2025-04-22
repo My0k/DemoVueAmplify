@@ -33,12 +33,14 @@ Simplemente abre el archivo `index.html` haciendo doble clic en él.
 
 ## Tecnologías utilizadas
 
-- **Frontend**: Vue.js 3, HTML5, CSS3, Chart.js
-- **Despliegue**: AWS, GitHub, Claude 3.7
+- **Frontend**: Vue.js 3 (versión CDN), HTML5, CSS3, Chart.js
+- **Diseño**: Inspirado en Bootstrap, con estilos personalizados
+- **Desarrollo**: Creado con asistencia de Claude 3.7
+- **Despliegue**: Preparado para AWS y GitHub
 
 ## Estructura del proyecto
 
 - `index.html` - Página principal
-- `app.js` - Código de la aplicación
-- `css/` - Estilos visuales
+- `app.js` - Código Vue.js para la lógica de la aplicación
+- `css/` - Estilos visuales organizados por componentes
 - `run.sh` - Script para ejecutar la aplicación
