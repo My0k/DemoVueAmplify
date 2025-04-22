@@ -1,96 +1,208 @@
 /* Estilos principales */
 :root {
-  --primary-color: #c5a47e;
-  --secondary-color: #1e2436;
-  --text-color: #555;
+  --primary-color: #C5A47E;
+  --secondary-color: #1E2436;
+  --text-color: #333;
   --light-color: #f9f9f9;
   --dark-color: #333;
-  --border-color: #e0e0e0;
-  --success-color: #4CAF50;
-  --danger-color: #f44336;
+  --border-color: #ddd;
+  --error-color: #dc3545;
+  --success-color: #28a745;
   --info-color: #2196F3;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
   color: var(--text-color);
-  background-color: #f5f5f5;
+  line-height: 1.6;
 }
 
 .container {
-  width: 100%;
-  max-width: 1400px;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 header {
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
 header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin: 0;
-  padding: 20px 0;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Asegurar que el botón de cerrar sesión siempre sea rojo */
+.main-nav .btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.main-nav .btn-danger:hover {
+  background-color: #c82333;
 }
 
 main {
-  padding: 40px 0;
+  min-height: calc(100vh - 180px);
+  padding-bottom: 40px;
 }
 
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #d8c4a9;
+  text-decoration: underline;
+}
+
+/* Ajustar la distribución de columnas */
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
-/* Responsive grid */
-@media (min-width: 768px) {
+/* En pantallas medianas, hacer la columna izquierda más angosta */
+@media (min-width: 992px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 3fr; /* Proporción 40% / 60% */
   }
 }
 
-@media (min-width: 1200px) {
+/* En pantallas grandes, hacer la columna izquierda aún más angosta */
+@media (min-width: 1400px) {
   .grid {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr; /* Proporción 33% / 67% */
   }
 }
 
 .card {
-  background: white;
+  background-color: white;
   border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  height: fit-content;
+  margin-bottom: 30px;
 }
 
 .card-header {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: white;
   padding: 15px 20px;
 }
 
 .card-header h2 {
-  margin: 0;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
+  margin: 0;
 }
 
 .card-body {
   padding: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #b39169;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+.abogado-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  .card-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+  }
 }
 
 /* Estilos para el footer */
@@ -107,14 +219,6 @@ footer p {
 }
 
 /* Estilos para la imagen del abogado */
-.abogado-img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--primary-color);
-}
-
 .img-preview {
   display: flex;
   justify-content: center;
